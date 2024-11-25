@@ -4,12 +4,10 @@
 class Executor
 {
 public:
-    // 初始化接口，设置初始位置和朝向
     Executor(int x = 0, int y = 0, char heading = 'N') : position_(x, y), heading_(heading)
     {
     }
 
-    // 批量执行控制指令
     void executeCommands(const std::string& commands)
     {
         for (char command : commands) {
@@ -17,7 +15,6 @@ public:
         }
     }
 
-    // 查询当前坐标位置和朝向
     void getPosition(int& x, int& y, char& heading) const
     {
         x = position_.getX();
@@ -25,7 +22,6 @@ public:
         heading = heading_.getDirection();
     }
 
-    // 打印当前坐标位置和朝向
     void printPosition() const
     {
         int x, y;
@@ -38,7 +34,6 @@ private:
     Position position_;
     Heading heading_;
 
-    // 执行单个控制指令
     void executeCommand(char command)
     {
         switch (command) {
@@ -56,7 +51,6 @@ private:
         }
     }
 
-    // 前进一格
     void moveForward()
     {
         switch (heading_.getDirection()) {

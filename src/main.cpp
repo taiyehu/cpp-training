@@ -1,14 +1,14 @@
 #include "main.h"
-
+using namespace std;
 int main()
 {
     Executor executor;
-    std::string commands;
+    string commands;
 
-    std::cout << "Enter commands (M to move, L to turn left, R to turn right, Q to quit): " << std::endl;
+    cout << "Enter commands (M to move, L to turn left, R to turn right, Q to quit): " << endl;
     while (true) {
-        std::cout << "> ";
-        std::cin >> commands;
+        cout << "> ";
+        cin >> commands;
         if (commands == "Q" || commands == "q") {
             break;
         }
