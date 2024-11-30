@@ -13,7 +13,8 @@ ADD_LIBRARY(training ${SOURCE}
         ../include/Position.h
         ../include/Executor.h
         ../include/main.h
-        Executor.h
-        Heading.h)
+        Executor.cpp
+        Heading.cpp
+        Position.cpp)
 
 TARGET_INCLUDE_DIRECTORIES(training PUBLIC "${INCLUDE}")

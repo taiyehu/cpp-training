@@ -9,46 +9,11 @@ public:
     {
     }
 
-    void turnLeft()
-    {
-        switch (direction_) {
-        case 'N':
-            direction_ = 'W';
-            break;
-        case 'W':
-            direction_ = 'S';
-            break;
-        case 'S':
-            direction_ = 'E';
-            break;
-        case 'E':
-            direction_ = 'N';
-            break;
-        }
-    }
+    void turnLeft();
 
-    void turnRight()
-    {
-        switch (direction_) {
-        case 'N':
-            direction_ = 'E';
-            break;
-        case 'E':
-            direction_ = 'S';
-            break;
-        case 'S':
-            direction_ = 'W';
-            break;
-        case 'W':
-            direction_ = 'N';
-            break;
-        }
-    }
+    void turnRight();
 
-    char getDirection() const
-    {
-        return direction_;
-    }
+    char getDirection() const;
 
 private:
     char direction_;

@@ -9,31 +9,13 @@ public:
     {
     }
 
-    void moveNorth()
-    {
-        ++y_;
-    }
-    void moveSouth()
-    {
-        --y_;
-    }
-    void moveEast()
-    {
-        ++x_;
-    }
-    void moveWest()
-    {
-        --x_;
-    }
+    void moveNorth();
+    void moveSouth();
+    void moveEast();
+    void moveWest();
 
-    int getX() const
-    {
-        return x_;
-    }
-    int getY() const
-    {
-        return y_;
-    }
+    int getX() const;
+    int getY() const;
 
 private:
     int x_, y_;

@@ -9,72 +9,48 @@ public:
     {
     }
 
-    void executeCommands(const std::string& commands)
-    {
-        for (char command : commands) {
-            executeCommand(toupper(command));
-        }
-    }
+    void executeCommands(const std::string& commands);
 
-    void getPosition(int& x, int& y, char& heading) const
-    {
-        x = position_.getX();
-        y = position_.getY();
-        heading = heading_.getDirection();
-    }
+    void getPosition(int& x, int& y, char& heading) const;
 
-    void printPosition() const
-    {
-        int x, y;
-        char heading;
-        getPosition(x, y, heading);
-        std::cout << "Current Position: (" << x << ", " << y << ") Heading: " << heading << std::endl;
-    }
+    void printPosition() const;
 
 private:
     Position position_;
     Heading heading_;
     bool acc = false;
 
-    void executeCommand(char command)
-    {
-        switch (command) {
-        case 'M':
-            if(acc) moveForward();
-            moveForward();
-            break;
-        case 'L':
-            if(acc) moveForward();
-            heading_.turnLeft();
-            break;
-        case 'R':
-            if(acc) moveForward();
-            heading_.turnRight();
-            break;
-        case 'F':
-            acc = !acc;
-        default:
-            break;
-        }
-    }
+    void turnLeftCommand();
 
-    void moveForward()
-    {
-        switch (heading_.getDirection()) {
-        case 'N':
-            position_.moveNorth();
-            break;
-        case 'S':
-            position_.moveSouth();
-            break;
-        case 'E':
-            position_.moveEast();
-            break;
-        case 'W':
-            position_.moveWest();
-            break;
+    void turnRightCommand();
+
+    void moveForwardCommand();
+
+    class MoveForwardCommand{
+    public:
+        void DoOperate(Executor &executor)
+        {
+            executor.moveForwardCommand();
         }
-    }
+    };
+
+    class TurnLeftCommand{
+    public:
+        void DoOperate(Executor &executor){
+            executor.turnLeftCommand();
+        }
+    };
+
+    class TurnRightCommand{
+    public:
+        void DoOperate(Executor &executor){
+            executor.turnRightCommand();
+        };
+    };
+
+    void executeCommand(char command);
+
+    void moveForward();
 };
 #ifndef CPP_TRAINING_EXECUTOR_H
 #define CPP_TRAINING_EXECUTOR_H
