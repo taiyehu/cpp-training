@@ -1,6 +1,7 @@
 //
 // Created by taiyehu on 2024/11/23.
 //
+#pragma once
 class Executor
 {
 public:
@@ -33,19 +34,25 @@ public:
 private:
     Position position_;
     Heading heading_;
+    bool acc = false;
 
     void executeCommand(char command)
     {
         switch (command) {
         case 'M':
+            if(acc) moveForward();
             moveForward();
             break;
         case 'L':
+            if(acc) moveForward();
             heading_.turnLeft();
             break;
         case 'R':
+            if(acc) moveForward();
             heading_.turnRight();
             break;
+        case 'F':
+            acc = !acc;
         default:
             break;
         }

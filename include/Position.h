@@ -1,6 +1,7 @@
 //
 // Created by taiyehu on 2024/11/23.
 //
+#pragma once
 class Position
 {
 public:
