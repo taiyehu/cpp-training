@@ -12,6 +12,8 @@ ADD_LIBRARY(training ${SOURCE}
         ../include/Heading.h
         ../include/Position.h
         ../include/Executor.h
-        ../include/main.h)
+        ../include/main.h
+        Executor.h
+        Heading.h)
 
 TARGET_INCLUDE_DIRECTORIES(training PUBLIC "${INCLUDE}")

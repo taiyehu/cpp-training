@@ -5,7 +5,7 @@ int main()
     Executor executor;
     string commands;
 
-    cout << "Enter commands (M to move, L to turn left, R to turn right, Q to quit): " << endl;
+    cout << "Enter commands (M to move, L to turn left, R to turn right, F to accelerate, Q to quit): " << endl;
     while (true) {
         cout << "> ";
         cin >> commands;
