@@ -9,7 +9,7 @@
 void Executor::executeCommands(const std::string& commands)
 {
     for (char command : commands) {
-        executeCommand(toupper(command));
+        executeCommand(command);
     }
 }
 
